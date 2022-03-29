@@ -94,6 +94,20 @@ function showAllBoxes() {
     thirdbox.style.display = "block";
 }
 
+// Reset Boxes Function
+function resetBoxes () {
+    firstbox.style.removeProperty('background-color');
+    firstbox.style.removeProperty('border');
+
+    secondbox.style.removeProperty('background-color');
+    secondbox.style.removeProperty('border');
+
+    thirdbox.style.removeProperty('background-color');
+    thirdbox.style.removeProperty('border');
+}
+
+
+
 
 //Change Button Events
 btn1.addEventListener("click", changeBoxOne);
@@ -107,8 +121,10 @@ btn5.addEventListener("click", hideBoxTwo);
 btn6.addEventListener("click", hideBoxThree);
 hbtnall.addEventListener("click", hideAllBoxes);
 
-// Show All Button Event
+// Show All and Reset Button Event
 showAllBtn.addEventListener("click", showAllBoxes);
+resetBtn.addEventListener("click", resetBoxes);
+
 
 
 
