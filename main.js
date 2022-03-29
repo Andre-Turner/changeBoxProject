@@ -1,4 +1,4 @@
-let firstbox, secondbox, thirdbox, btn1, btn2, btn3, btnall, allColors, allBorders, btn4, btn5, btn6, hbtnall;
+let firstbox, secondbox, thirdbox, btn1, btn2, btn3, btnall, allColors, allBorders, btn4, btn5, btn6, hbtnall, resetBtn, showAllBtn;
 
 allColors = ["red", "green", "blue", "yellow", "purple", "orange", "black", "maroon", "silver", "gold", "lavender", "cyan", "white", "darkgreen", "pink"];
 
@@ -15,11 +15,19 @@ btn5 = document.getElementById("hidebtn2");
 btn6 = document.getElementById("hidebtn3");
 hbtnall = document.getElementById("hidebtnall");
 
+// Change Button Elements
 btn1 = document.getElementById("changebtn1");
 btn2 = document.getElementById("changebtn2");
 btn3 = document.getElementById("changebtn3");
 btnall = document.getElementById("changebtnall");
 
+// Show and Reset Button Elements
+showAllBtn = document.getElementById("showAllBtn");
+resetBtn = document.getElementById("resetBtn");
+
+
+
+// Functions for Change Box Colors and Borders
 function changeBoxOne() {
     firstbox.style.backgroundColor = allColors[Math.floor(Math.random() * allColors.length)];
     firstbox.style.border = "5px solid " + allColors[Math.floor(Math.random() * allColors.length)];
@@ -55,6 +63,8 @@ function changeAllBoxes() {
         (Math.random() * allColors.length)];
 }
 
+
+// Function for Hide Boxes
 function hideBoxOne() {
     firstbox.style.display = "none";
 }
@@ -69,6 +79,19 @@ function hideBoxThree() {
 
 function hideAllBoxes() {
     firstbox.style.display = "none";
+
+    secondbox.style.display = "none";
+
+    thirdbox.style.display = "none";
+}
+
+// Show All Functions
+function showAllBoxes() {
+    firstbox.style.display = "block";
+
+    secondbox.style.display = "block";
+
+    thirdbox.style.display = "block";
 }
 
 
@@ -84,7 +107,8 @@ btn5.addEventListener("click", hideBoxTwo);
 btn6.addEventListener("click", hideBoxThree);
 hbtnall.addEventListener("click", hideAllBoxes);
 
-
+// Show All Button Event
+showAllBtn.addEventListener("click", showAllBoxes);
 
 
 
